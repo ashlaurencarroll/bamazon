@@ -18,19 +18,13 @@ connection.connect(function(err) {
 });
 function printItems() {
 connection.query("SELECT * FROM products", function(err, res) {
-   // if (err) throw (err);
+   
     console.log("Item Product  Department  Price  Quantity ");
 
     for (var i=0; i<res.length; i++) {
-        //if (i<0)
-        //{
+       
     		console.log(res[i].item_id + "      " + res[i].product_name + "  " + res[i].department_name + "  " + res[i].price + "  " + res[i].stock_quantity);
-    	//}
-        //else if (i >= 0)
-        //{
-    		//console.log(res[i].item_id + "      " + res[i].product_name + "  " + res[i].department_name + "  " + res[i].price + "  " + res[i].stock_quantity);
-    //}
-    }
+    	}
 
     promptUser();
 });
@@ -39,7 +33,7 @@ var promptUser = function(){
 // console.log('------------------')
 	inquirer.prompt([{
 		name: 'item_id',
-		message: "Enter the ID of the item you wish to purchase.",
+		message: "Enter the id of the item you wish to buy.",
 
 		validate: function(value){
             if (isNaN(value) === false) {
@@ -73,7 +67,6 @@ var promptUser = function(){
 
                 if (currentAmount > res[0].stock_quantity){
                     console.log("You cannot buy that many!");
-
                     promptUser();
                 }
                 else { 
