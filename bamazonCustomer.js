@@ -19,7 +19,6 @@ connection.connect(function(err) {
 function printItems() {
 connection.query("SELECT * FROM products", function(err, res) {
    // if (err) throw (err);
-    console.log('test')
     console.log("Item Product  Department  Price  Quantity ");
 
     for (var i=0; i<res.length; i++) {

@@ -30,4 +30,6 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("burberry", "scarf", 80, 6);
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("vans", "tank", 30, 15);
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("vans", "shoes", 100, 10);
 SELECT * FROM products 
